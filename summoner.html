@@ -19,7 +19,48 @@
       </header>
       <section>
 <p>These are the things that you want as a Summoner. Each also has a point value: the more points, the better. You don't need to get all of them, but you should try to get a good deal. Even if you can get everything, if the Devil is ripping you off, it won't end well for you.</p>
-<ul id="desires"></ul>
+<ul id="desires"><li><li><li><li></ul>
+<script>
+	var thingsYaWant = ["A million dollars", "A wallet that never empties", "A billion dollars", "Be the richest person in the world", "Rule the world", "Rule a country", "An army", "Magical powers", "A super power", "A demon servant", "A magical talking animal", "A cool sidekick", "A true friend", "Make the Devil your best friend", "Marry the Devil", "True love", "Find your soulmate"];
+	var stuffs = ["fiddle", "guitar", "piano", "flute", "saxophone", "tuba", "sitar", "pair of underpants", "body", "face", "family", "friend", "dog", "cat", "job", "voice", "girlfriend", "boyfriend", "hat", "weapon"];
+	var roles = ["pop star", "king", "queen", "rock star", "president", "wizard", "magician", "assasin", "prime minister", "mime", "musician", "actor", "painter", "sculptor", "leader", "dancer", "warrior", "hero", "writer", "athlete"];
+	var adjectivests = ["greatest", "greatest", "greatest", "greatest", "strongest", "most famous", "coolest", "most beautiful", "fastest", "most powerful", "most interesting", "most valuable", "loveliest", "most dangerous", "most amazing", "nicest", "best", "most adorable"];
+	var superlaffixes = ["in the world", "ever", "to ever exist", "in the universe", "in the galaxy", "on the planet", "in history"];
+
+	var list = document.getElementById("desires");
+	var items = list.getElementsByTagName("li");
+	var prevChoices = [""];
+	for (var i = 0; i < items.length; i++) {
+		var choice = "";
+		while  (contains(prevChoices, choice)) {
+			var rVal = Math.random();
+			if(rVal > .7) {
+				choice = randArr(thingsYaWant);
+			} else if (rVal > .5) {
+				choice = "A " + randArr(stuffs) + " of gold";
+			} else if (rVal > .25) {
+				choice = "The " + randArr(adjectivests) + " " + randArr(stuffs) + " " + randArr(superlaffixes);
+			} else {
+				choice = "Become the " + randArr(adjectivests) + " " + randArr(roles) + " " + randArr(superlaffixes);
+			} 
+		}
+		prevChoices.push(choice);
+		items[i].innerHTML += choice + ":     " + Math.floor((Math.random() * 3) + 1) + " points";
+	}
+	
+	function contains (arr, obj) {
+		for(var i = 0; i < arr.length; i++) {
+			if(arr[i] == obj) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	function randArr (arr) {
+		return arr[Math.floor(Math.random() * arr.length)];
+	}
+</script>
 <p>Of course, the Devil won't give you what you want out of the kindness of his heart. You have to give them something in return. Here's what you can offer:<br><ul><li>Your soul<li>Your life<li>Your eternal servitude<li>Your firstborn child</ul></p>
 	  </section>
   </body>
