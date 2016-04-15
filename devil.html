@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width">
+	<script>
+	var list = document.getElementById("wants");
+	var items = list.getElementsByTagName("li");
+	for (var i = 0; i < items.length; i++) {
+		items[i].value += ": " + Math.floor((Math.random() * 3) + 1) + " points";
+	}
+	</script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,6 +26,7 @@
       </header>
       <section>
 <p>These are the things that you want as the Devil. Each has a point value. The more points, the better. You can even ask for multiples. Of course, you're the Devil, so feel free to embelish your deals with extra details. </p>
+<ul id="wants"><li>Souls<li>Lives<li>Firstborn children<li>Eternal servitude</ul>
 	  </section>
   </body>
 </html>
