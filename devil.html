@@ -12,6 +12,7 @@
 	var list = document.getElementById("wants");
 	var items = list.getElementsByTagName("li");
 	for (var i = 0; i < items.length; i++) {
+		items[i].style.backgroundColor = "red";
 		items[i].value += ": " + Math.floor((Math.random() * 3) + 1) + " points";
 	}
 	</script>
