@@ -38,8 +38,10 @@
 		prevValue = nValue;
 	}
 
-        var goals = {"give 3 cursed gold items", "give 3 destructive powers", "unleash 3 beasts upon the world", "cause 3 deaths", "seed moral decay in 3 ways", "corrupt 3 children", "obtain 3 earthly servants of evil", "arrange 3 unholy loves"}
+        var goals = ["give 3 cursed gold items", "give 3 destructive powers", "unleash 3 beasts upon the world", "cause 3 deaths", "seed moral decay in 3 ways", "corrupt 3 children", "obtain 3 earthly servants of evil", "arrange 3 unholy loves"];
         var secret = document.getElementById("secret");
+        secret.innerHTML += goals[Math.floor(Math.random() * arr.length)];
+	
         
 </script>
 	  </section>
